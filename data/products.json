@@ -1,0 +1,32 @@
+{
+  "products": [
+    {
+      "id": "1",
+      "name": "Dunk Low",
+      "price": 120,
+      "image": "/product-img/Product-img.png",
+      "colors": ["#000000", "#D1D5DB"]
+    },
+    {
+      "id": "2",
+      "name": "Dunk Low",
+      "price": 120,
+      "image": "/product-img/Product-img.png",
+      "colors": ["#000000", "#D1D5DB"]
+    },
+    {
+      "id": "3",
+      "name": "Dunk Low",
+      "price": 120,
+      "image": "/product-img/Product-img.png",
+      "colors": ["#000000", "#D1D5DB"]
+    },
+    {
+      "id": "4",
+      "name": "Dunk Low",
+      "price": 120,
+      "image": "/product-img/Product-img.png",
+      "colors": ["#000000", "#D1D5DB"]
+    }
+  ]
+}

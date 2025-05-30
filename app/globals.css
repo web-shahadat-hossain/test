@@ -1,0 +1,134 @@
+@import "tailwindcss";
+@plugins tailwindcss-animate;
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  --cloud-gray: #edf1f4;
+  --soft-gray: #d9d9d9;
+  --blaze-orange: #ff5c00;
+  --scarlet-orange: #ff2f0a;
+  --stone: #838383;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-cloudGray: var(--cloud-gray);
+  --color-softGray: var(--soft-gray);
+  --color-stone: var(--stone);
+  --color-blazeOrange: var(--blaze-orange);
+  --color-scarletOrange: var(--scarlet-orange);
+  --font-inter: var(--font-inter);
+  --animate-marquee: marquee var(--duration) infinite linear;
+  --animate-marquee-vertical: marquee-vertical var(--duration) linear infinite;
+}
+
+/* @media (prefers-color-scheme: dark) {
+    :root {
+        --background: #0a0a0a;
+        --foreground: #ededed;
+    }
+} */
+
+body {
+  font-family: Inter, Helvetica, sans-serif;
+}
+
+@layer components {
+  .title_lg {
+    @apply text-[96px] font-bold text-center;
+  }
+  .title_md {
+    @apply text-[70px] font-bold text-center;
+  }
+  .title_sm {
+    @apply text-[50px]  font-bold text-center;
+  }
+
+  .center {
+    @apply flex items-center justify-center;
+  }
+}
+
+.nav-link:after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 5px;
+  border-radius: 20px;
+  background-color: var(--color-blazeOrange);
+  position: absolute;
+  bottom: -20px;
+  transform: scaleX(0);
+  transition: transform 0.3s ease-in-out;
+}
+
+.nav-link:hover:after {
+  transform: scaleX(1);
+}
+
+.radial_text_gradient {
+  background-image: radial-gradient(
+    circle,
+    rgba(0, 0, 0, 0.8) 0%,
+    rgba(131, 131, 131, 0.8) 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+.linear_text_gradient {
+  background: linear-gradient(to bottom, #ffffff, #ffffff20, #ffffff00);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Marquee */
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(calc(-100% - var(--gap)));
+  }
+}
+@keyframes marquee-vertical {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(calc(-100% - var(--gap)));
+  }
+}
+
+/* swiper */
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+
+  /* Center slide text vertically */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.slick-dots {
+  left: -134px;
+  bottom: 34px !important;
+}
